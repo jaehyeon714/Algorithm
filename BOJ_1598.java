@@ -7,27 +7,12 @@ public class Main {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
-		int A = Integer.parseInt(st.nextToken());
-		int B = Integer.parseInt(st.nextToken());
-		int x1, x2, y1, y2 = 0;
+		int num1 = Integer.parseInt(st.nextToken()) - 1;
+		int num2 = Integer.parseInt(st.nextToken()) - 1;
 		
-		if (A % 4 == 0) {
-			x1 = A / 4;
-			y1 = 1;
-		} else {
-			x1 = (A / 4) + 1;
-			y1 = 5 - (A % 4); 
-		}
+		int dist = Math.abs(num2/4 - num1/4) + Math.abs(num2%4 - num1%4);
 		
-		if (B % 4 == 0) {
-			x2 = B / 4;
-			y2 = 1;
-		} else {
-			x2 = (B / 4) + 1;
-			y2 = 5 - (B % 4); 
-		}
-		
-		System.out.println(Math.abs(x2 - x1) + Math.abs(y2 - y1));
+		System.out.println(dist);
 	}
 
 }
